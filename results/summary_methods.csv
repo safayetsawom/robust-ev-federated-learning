@@ -1,0 +1,8 @@
+,MAE,MAE,RMSE,RMSE
+,mean,std,mean,std
+method,,,,
+persistence,5.865,0.03,7.527,0.056
+seasonal_naive,5.534,0.281,8.14,0.462
+local_only,2.243,0.029,2.81,0.061
+centralized,2.331,0.116,2.954,0.135
+fedavg,4.23,0.498,5.153,0.487
