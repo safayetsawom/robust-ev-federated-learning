@@ -13,13 +13,13 @@ station drops out of training rounds?
 
 ## Architecture
 ```mermaid
-flowchart TB
-    S1["Station A: office\n(local data)"] -->|weights only| AGG
-    S2["Station B: residential\n(local data)"] -->|weights only| AGG
-    S3["Station C: mall\n(local data)"] -.->|"may drop out"| AGG
-    AGG["Server: FedAvg\n(weighted average)"] -->|global model| S1
-    AGG -->|global model| S2
-    AGG -->|global model| S3
+flowchart TD
+    A["Station A: Office<br/>Local data"] -->|Model weights| S["Server: FedAvg"]
+    B["Station B: Residential<br/>Local data"] -->|Model weights| S
+    C["Station C: Mall<br/>Local data"] -.->|"Model weights (may drop out)"| S
+    S -->|Global model| A
+    S -->|Global model| B
+    S -->|Global model| C
 ```
 Raw data never leaves a station; only model weights are exchanged.
 
